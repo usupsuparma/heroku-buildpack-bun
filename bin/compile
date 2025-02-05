@@ -95,7 +95,7 @@ if [[ "$has_build_script" == "true" && ! -f .skip-bun-build ]]
 then
   echo "====================="
   echo "Building application..."
-  bun run build
+  # bun run build
   echo "Done building application..."
 fi
 
