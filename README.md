@@ -6,7 +6,7 @@ Largely copied from the [Deno buildpack](https://github.com/chibat/heroku-buildp
 
 ## How to use
 
-To add the buildpack to your Heroku app, visit the settings page for your app on Heroku, then under 'Buildpacks' add the URL `https://github.com/jakeg/heroku-buildpack-bun`.
+To add the buildpack to your Heroku app, visit the settings page for your app on Heroku, then under 'Buildpacks' add the URL `https://github.com/usupsuparma/heroku-buildpack-bun`.
 
 You'll either need a [`Procfile`](https://devcenter.heroku.com/articles/procfile) in the root folder of your app (with eg `web: bun index.js` in it), or a `package.json` with a start script listed.
 
@@ -28,16 +28,16 @@ Optionally skip any of these steps with files named `.skip-bun-install`, `.skip-
 Bind to `env.PORT` eg
 
 ```js
-import { env } from 'process'
+import { env } from "process";
 
 const server = Bun.serve({
   port: env.PORT || 3000,
   fetch(request) {
-    return new Response(`Welcome to Bun running on Heroku!`)
+    return new Response(`Welcome to Bun running on Heroku!`);
   },
-})
+});
 
-console.log(`Listening on localhost:${server.port}`)
+console.log(`Listening on localhost:${server.port}`);
 ```
 
 ## Potential issues

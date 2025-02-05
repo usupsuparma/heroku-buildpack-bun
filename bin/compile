@@ -77,6 +77,7 @@ if [[ -f package.json && ! -f .skip-bun-install ]]
 then
   echo "Installing dependencies..."
   bun install
+  echo "Finish bun install..."
 fi
 
 has_heroku_prebuild_script=$(has_script "package.json" "heroku-prebuild")
@@ -99,5 +100,6 @@ if [[ "$has_heroku_postbuild_script" == "true" && ! -f .skip-bun-heroku-postbuil
 then
   echo "Running Heroku postbuild script..."
   bun run heroku-postbuild
+  echo "Done building postbuild script..."
 fi
 
