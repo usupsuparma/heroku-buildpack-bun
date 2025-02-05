@@ -75,6 +75,7 @@ cd $BUILD_DIR
 # download dependencies
 if [[ -f package.json && ! -f .skip-bun-install ]]
 then
+  echo "====================="
   echo "Installing dependencies..."
   bun install
   echo "Finish bun install..."
@@ -83,13 +84,16 @@ fi
 has_heroku_prebuild_script=$(has_script "package.json" "heroku-prebuild")
 if [[ "$has_heroku_prebuild_script" == "true" && ! -f .skip-bun-heroku-prebuild ]]
 then
+  echo "====================="
   echo "Running Heroku prebuild script..."
   bun run heroku-prebuild
+  echo "Done Heroku prebuild script..."
 fi
 
 has_build_script=$(has_script "package.json" "build")
 if [[ "$has_build_script" == "true" && ! -f .skip-bun-build ]]
 then
+  echo "====================="
   echo "Building application..."
   bun run build
   echo "Done building application..."
@@ -98,6 +102,7 @@ fi
 has_heroku_postbuild_script=$(has_script "package.json" "heroku-postbuild")
 if [[ "$has_heroku_postbuild_script" == "true" && ! -f .skip-bun-heroku-postbuild ]]
 then
+  echo "====================="
   echo "Running Heroku postbuild script..."
   bun run heroku-postbuild
   echo "Done building postbuild script..."
