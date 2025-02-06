@@ -39,8 +39,7 @@ elif [ -f $BUILD_DIR/runtime.txt ]
 then
   BUN_VERSION="$(cat $BUILD_DIR/runtime.txt)"
 fi
-echo "Show list directory*"
-ls 
+
 echo "Installing Bun $BUN_VERSION"
 
 if [[ -n $BUN_VERSION ]]
@@ -81,7 +80,10 @@ if [[ -f package.json && ! -f .skip-bun-install ]]
 then
   echo "====================="
   echo "Installing dependencies..."
-  bun install
+  # bun install
+  echo "Show list directory*"
+  ls
+  echo "End ls" 
   echo "Finish bun install..."
 fi
 
