@@ -80,9 +80,9 @@ if [[ -f package.json && ! -f .skip-bun-install ]]
 then
   echo "====================="
   echo "Installing dependencies..."
-  # bun install
+  bun install
   echo "Show list directory*"
-  ls -la
+  ls 
   echo "End ls" 
   echo "Finish bun install..."
 fi
