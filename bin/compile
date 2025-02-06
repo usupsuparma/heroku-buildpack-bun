@@ -82,7 +82,7 @@ then
   echo "Installing dependencies..."
   # bun install
   echo "Show list directory*"
-  ls
+  ls -la
   echo "End ls" 
   echo "Finish bun install..."
 fi
