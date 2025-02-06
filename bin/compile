@@ -72,6 +72,9 @@ set +e
 
 cd $BUILD_DIR
 
+echo "Show list directory"
+ls 
+
 # download dependencies
 if [[ -f package.json && ! -f .skip-bun-install ]]
 then
