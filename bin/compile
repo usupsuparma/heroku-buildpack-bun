@@ -74,6 +74,20 @@ set +e
 cd $BUILD_DIR
 
 
+  echo "Show list directory*"
+  ls 
+  echo "End ls" 
+
+if [ -f "nuxt-build.tar.gz" ]; then
+    echo "✅ File 'nuxt-build.tar.gz' ditemukan, mengekstrak file..."
+    mkdir -p .output
+    tar -xzvf nuxt-build.tar.gz -C .output
+  else
+    echo "❌ ERROR: File 'nuxt-build.tar.gz' tidak ditemukan! Cek apakah download berhasil."
+    exit 1
+fi
+
+
 
 # download dependencies
 if [[ -f package.json && ! -f .skip-bun-install ]]
