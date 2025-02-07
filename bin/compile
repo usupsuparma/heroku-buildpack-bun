@@ -78,7 +78,7 @@ echo "Show list directory*"
 ls -la
 echo "End ls" 
 
-TARGET_DIR=".build/server/node_modules"
+TARGET_DIR=".build/server/"
 
 if [ -d "$TARGET_DIR" ]; then
   echo "Running bun directory $TARGET_DIR..."
