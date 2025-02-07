@@ -74,18 +74,9 @@ set +e
 cd $BUILD_DIR
 
 
-  echo "Show list directory*"
-  ls 
-  echo "End ls" 
-
-if [ -f "nuxt-build.tar.gz" ]; then
-    echo "✅ File 'nuxt-build.tar.gz' ditemukan, mengekstrak file..."
-    mkdir -p .output
-    tar -xzvf nuxt-build.tar.gz -C .
-  else
-    echo "❌ ERROR: File 'nuxt-build.tar.gz' tidak ditemukan! Cek apakah download berhasil."
-    exit 1
-fi
+echo "Show list directory*"
+ls -la
+echo "End ls" 
 
 
 
